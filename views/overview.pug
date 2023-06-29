@@ -1,0 +1,20 @@
+extends base 
+
+block content 
+    main.main 
+        .card-container
+
+            each article in articles
+                .card
+                    .card__header
+                        img.card__picture-img(src=`/img/articles/${article.image}`, alt=`${article.name}`)
+                        h3.heading-tertiarary
+                            p.article__name= article.name
+
+                    .card__details
+                        h4.card__sub-heading= `taille: ${article.taille}`
+                        p.card__text= article.description
+                        p.card__text= `€${article.price} `
+                            a.btn.btn--green.btn--small(href=`/article/${article.slug}`) Details
+                                
+                                

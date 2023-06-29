@@ -1,0 +1,39 @@
+extends base 
+
+block content 
+    main.main
+        .user-view
+            .user-view__content
+                .user-view__form-container
+                    
+                    h2.ma-bt-md Votre profil
+                    hr
+                    form.form.form-user-data
+                        .form__group
+                            label.form__label__user(for='name') pseudo:
+                            input#name.form__input__user(type='text', value=`${user.name}`, required, name='name')
+                        .form__group.ma-bt-md
+                            label.form__label__user(for='email') Adresse mail:
+                            input#email.form__input__user(type='email', value=`${user.email}`, required, name='email')
+                        .form__group.form__photo-upload
+                            img.form__user-photo(src=`/img/users/${user.photo}`, alt='User photo')
+                            a.btn-text(href='') Choisir une nouvelle image
+                        .form__group.right
+                            button.btn.btn--small__user.btn--green Sauvegarder les modifications
+                        
+                .line &nbsp;
+                    
+                .user-view__form-container
+                    h2.heading-secondary.ma-bt-md Changer de mot de passe
+                    form.form.form-user-password
+                        .form__group
+                            label.form__label__user(for='password-current') Mot de passe actuel
+                            input#password-current.form__input__user(type='password', placeholder='••••••••', required, minlength='8')
+                        .form__group
+                            label.form__label__user(for='password') Nouveau mot de passe
+                            input#password.form__input__user(type='password', placeholder='••••••••', required, minlength='8')
+                        .form__group.ma-bt-lg
+                            label.form__label__user(for='password-confirm') Confirmer le mot de passe
+                            input#password-confirm.form__input__user(type='password', placeholder='••••••••', required, minlength='8')
+                        .form__group.right
+                            button.btn.btn--small__user.btn--green.btn--save-password Sauvegarder

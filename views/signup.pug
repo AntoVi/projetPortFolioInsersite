@@ -1,0 +1,21 @@
+extends base 
+
+block content 
+    main.main
+        .signup-form 
+            h2.heading-secondary.ma-bt-lg Créer votre compte
+            form.form.form--signup
+                .form_group
+                    label.form__label(for='name') Pseudo 
+                    input#name.form__input(type='text', name='name', required)
+                .form__group
+                    label.form__label(for='email') Adresse mail
+                    input#email.form__input(type='email', name='email', placeholder='you@example.com', required)
+                .form__group
+                    label.form__label(for='password') Nouveau mot de passe
+                        input#password.form__input(type='password', name='password', placeholder='••••••••', required, minlength='8')
+                .form__group.ma-bt-lg
+                    label.form__label(for='password-confirm') Confirmer le mot de passe
+                        input#password-confirm.form__input(type='password', name='password-confirm', placeholder='••••••••', required, minlength='8')
+                .form__group 
+                    button.btn.btn--green Signup

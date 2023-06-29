@@ -1,0 +1,14 @@
+header.header
+    nav.nav--articles
+        a.nav__el(href='/') Boutique
+        a.nav__el(href='/portfolio') Portfolio
+        a.nav__el(href='/cours') Cours
+    nav.nav.nav--user 
+        if user
+            a.nav__el.nav__el--logout(href='/') Log out
+            a.nav__el(href='/me')
+                img.nav__user-img(src=`/img/users/${user.photo}` alt=`Photo of ${user.name} `)
+                span= user.name.split(' ')[0]
+        else
+            a.nav__el.nav__el--cta(href='/signup') Sign up
+            a.nav__el(href='/login') Log in

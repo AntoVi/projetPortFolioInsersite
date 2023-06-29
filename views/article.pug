@@ -1,0 +1,14 @@
+extends base 
+
+block content
+    .card-container__article
+        .card__article
+            .card__header__article
+                img.card__picture-img(src=`/img/articles/${article.image}`, alt=`${article.name}`)
+                h3.heading-tertiarary
+                    span.article__name= article.name
+
+            .card__details
+                h4.card__sub-heading__article= `taille: ${article.taille}`
+                p.card__text__article= article.description
+                p.card__text__article= `${article.price} €`
